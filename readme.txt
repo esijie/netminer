@@ -1,14 +1,34 @@
-��������ݲɼ�����
-�����������ҳ�ɼ�������֧�ֶ��̣߳����������С�
+网络矿工数据采集软件
+基于正则的网页采集软件，支持多线程，多任务运行。
 
-����ҵ�汾תΪ��Դ�汾���������й���ҵ�汾��˵���ɺ��ԣ�����ʹ��ȥ������ҵ�汾�ı�ʶ���ϴ��°汾��
+由商业版本转为开源版本，软件中有关商业版本的说明可忽略，如您使用去除了商业版本的标识可上传新版本。
 
-��Դ�汾��������ҳ�Զ����ű�����û�����ƣ����������ơ�
+开源版本增加了网页自动化脚本，但没有完善，可自行完善。
 
-���ڵ��������˵����
-ҳ�沼��ʹ���ˣ�WeifenLuo.WinFormsUI.Docking  https://github.com/dockpanelsuite/dockpanelsuite/tree/development_2.3
-�зִַ�ʹ�õ��ǣ��̹ŷִʣ����翪Դ�� codeplex����ǰ��վ�ѹرգ������в����̹ŷִʣ������ǣ�eaglet
-�ĵ�����ʹ�õ��ǣ�npoi  https://github.com/nissl-lab/npoi
-��ҳ�Զ����ű�ʹ�õ��ǣ�Geckofx-Core 
+关于第三方组件说明：
+页面布局使用了：WeifenLuo.WinFormsUI.Docking  https://github.com/dockpanelsuite/dockpanelsuite/tree/development_2.3
+中分分词使用的是：盘古分词，最早开源于 codeplex，当前网站已关闭，可自行查找盘古分词，作者是：eaglet
+文档处理使用的是：npoi  https://github.com/nissl-lab/npoi
+网页自动化脚本使用的是：Geckofx-Core 
 
-Э�飺GPLv3.0
+协议：GPLv3.0
+
+首先下载源码，在vs2022社区版中打开。默认.net是4.0，如果默认还是4.0，仅限升级到4.8.
+可能缺少的引用是：
+Geckofx-Core V45
+MySqlData V6.9
+System.Data.SQLite V1.0.66
+WeifenLuo.WinFormsUI.Docking V2.3.1
+引用即可，引用后编译。
+
+在vs2022社区版 .net 4.8环境下，编译成功。
+默认启动工程为：minerspider
+
+系统最初的底子支持多语言，后期没有继续多语言处理，但本身系统框架是支持的，可以在此基础上进行扩展多语言能力。
+
+分布式采集因为需要中心服务器节点支持，所以开源版本去掉了此功能。但保留了相关的工程文件，可供参考。
+分布式采集的思路是：各客户端上传采集任务到中心节点，由中心节点对采集任务的目标网址进行搜索，获取到代采网址进行任务分解，分解后多个子任务，由客户端请求下载子任务，子任务带有排重库，客户端完成数据采集后，将任务+数据进行打包上传，中心节点对子任务进行数据合并处理。
+
+排重库为哈希树结构。
+
+系统重写了http请求。
