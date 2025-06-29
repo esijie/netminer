@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FD7D318D-D801-4915-94CC-846697CC89C1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Soukey</RootNamespace>
+    <AssemblyName>Soukey</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Soukey.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\bin\Release\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>..\bin\Release\Soukey.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=5.1.2.2, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\..\npoi\bin\.net 2.0\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="tessnet2_32">
+      <HintPath>..\bin\tessnet2_32.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cDict.cs" />
+    <Compile Include="cProxy.cs" />
+    <Compile Include="cSoukeyException.cs" />
+    <Compile Include="Gather\cAutoID.cs" />
+    <Compile Include="Gather\cEventProxy.cs" />
+    <Compile Include="Gather\cExport.cs" />
+    <Compile Include="Gather\cGatherControl.cs" />
+    <Compile Include="Gather\cGatherEvent.cs" />
+    <Compile Include="Gather\cGatherManage.cs" />
+    <Compile Include="Gather\cGatherTask.cs" />
+    <Compile Include="Gather\cGatherTaskList.cs" />
+    <Compile Include="Gather\cGatherTaskSplit.cs" />
+    <Compile Include="Gather\cGatherWeb.cs" />
+    <Compile Include="Gather\cHashTree.cs" />
+    <Compile Include="Gather\cMultiPage.cs" />
+    <Compile Include="Gather\cOcr.cs" />
+    <Compile Include="Gather\cParseHtml.cs" />
+    <Compile Include="Gather\cSmartObj.cs" />
+    <Compile Include="Gather\cXPathExpression.cs" />
+    <Compile Include="HtmlAgilityPack\crc32.cs" />
+    <Compile Include="HtmlAgilityPack\EncodingFoundException.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlAttribute.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlAttributeCollection.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlCmdLine.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlCommentNode.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlConsoleListener.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlDocument.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlElementFlag.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlEntity.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlHelper.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlNameTable.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlNode.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlNodeCollection.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlNodeNavigator.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlNodeType.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlParseError.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlParseErrorCode.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlTextNode.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlWeb.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlWebException.cs" />
+    <Compile Include="HtmlAgilityPack\IOLibrary.cs" />
+    <Compile Include="HtmlAgilityPack\MixedCodeDocument.cs" />
+    <Compile Include="HtmlAgilityPack\MixedCodeDocumentCodeFragment.cs" />
+    <Compile Include="HtmlAgilityPack\MixedCodeDocumentFragment.cs" />
+    <Compile Include="HtmlAgilityPack\MixedCodeDocumentFragmentList.cs" />
+    <Compile Include="HtmlAgilityPack\MixedCodeDocumentFragmentType.cs" />
+    <Compile Include="HtmlAgilityPack\MixedCodeDocumentTextFragment.cs" />
+    <Compile Include="HtmlAgilityPack\NameValuePair.cs" />
+    <Compile Include="HtmlAgilityPack\NameValuePairList.cs" />
+    <Compile Include="Log\cGatherTaskLog.cs" />
+    <Compile Include="Log\cRadarLog.cs" />
+    <Compile Include="Plugin\cPlugin.cs" />
+    <Compile Include="Plugin\cRunPlugin.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Proxy\cProxyControl.cs" />
+    <Compile Include="Proxy\cProxyInfo.cs" />
+    <Compile Include="Gather\cTaskData.cs" />
+    <Compile Include="Gather\cTaskDataList.cs" />
+    <Compile Include="Gather\cTaskSplitData.cs" />
+    <Compile Include="Listener\cCheckPlan.cs" />
+    <Compile Include="Listener\cFileMonitor.cs" />
+    <Compile Include="Listener\cListenControl.cs" />
+    <Compile Include="Listener\cListenEvent.cs" />
+    <Compile Include="Listener\cListenManage.cs" />
+    <Compile Include="Listener\cRunTask.cs" />
+    <Compile Include="Log\cSystemLog.cs" />
+    <Compile Include="Plan\cPlan.cs" />
+    <Compile Include="Plan\cPlanRunLog.cs" />
+    <Compile Include="Plan\cPlans.cs" />
+    <Compile Include="Plan\cTaskPlan.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="publish\cPublishControl.cs" />
+    <Compile Include="publish\cPublishData.cs" />
+    <Compile Include="publish\cPublishEvent.cs" />
+    <Compile Include="publish\cPublishManage.cs" />
+    <Compile Include="publish\cPublish.cs" />
+    <Compile Include="publish\cPublishTaskData.cs" />
+    <Compile Include="Radar\cDataInfo.cs" />
+    <Compile Include="Radar\cEventProxy.cs" />
+    <Compile Include="Radar\cIndex.cs" />
+    <Compile Include="Radar\cRadar.cs" />
+    <Compile Include="Radar\cRadarControl.cs" />
+    <Compile Include="Radar\cRadarEvent.cs" />
+    <Compile Include="Radar\cRadarList.cs" />
+    <Compile Include="Radar\cRadarManage.cs" />
+    <Compile Include="Radar\cRadarUrl.cs" />
+    <Compile Include="Radar\cRule.cs" />
+    <Compile Include="Radar\cSource.cs" />
+    <Compile Include="Resources\globalPara.Designer.cs" />
+    <Compile Include="Resources\globalUI.Designer.cs" />
+    <Compile Include="Task\cAspxPara.cs" />
+    <Compile Include="Task\cFieldRule.cs" />
+    <Compile Include="Task\cFieldRules.cs" />
+    <Compile Include="Task\cHeader.cs" />
+    <Compile Include="Task\cMultiPageRule.cs" />
+    <Compile Include="Task\cMultiPageRules.cs" />
+    <Compile Include="Task\cNavigRule.cs" />
+    <Compile Include="Task\cNavigRules.cs" />
+    <Compile Include="Task\cPublishParas.cs" />
+    <Compile Include="Task\cPublishTask.cs" />
+    <Compile Include="Task\cTask.cs" />
+    <Compile Include="Task\cTaskClass.cs" />
+    <Compile Include="Task\cTaskComplete.cs" />
+    <Compile Include="Task\cTaskIndex.cs" />
+    <Compile Include="Task\cTaskRun.cs" />
+    <Compile Include="Task\cTasks.cs" />
+    <Compile Include="Task\cTriggerTask.cs" />
+    <Compile Include="Task\cUpgradeTask.cs" />
+    <Compile Include="Task\cUrlAnalyze.cs" />
+    <Compile Include="Task\cWebLink.cs" />
+    <Compile Include="Task\cWebpageCutFlag.cs" />
+    <Compile Include="Tools\Base64Decoder.cs" />
+    <Compile Include="Tools\Base64Encoder.cs" />
+    <Compile Include="Tools\cEmail.cs" />
+    <Compile Include="Tools\cGetInternetDate.cs" />
+    <Compile Include="Tools\cVersion.cs" />
+    <Compile Include="Tools\Watermark.cs" />
+    <Compile Include="Url\cBloomFilter.cs" />
+    <Compile Include="web\cLogInfo.cs" />
+    <Compile Include="web\cMyTask.cs" />
+    <Compile Include="web\cTaskList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\globalPara.en-US.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\globalPara.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\globalUI.en-US.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\globalUI.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Spider\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HtmlExtract\HtmlExtract.csproj">
+      <Project>{E4CEADD1-68AB-42A0-AD17-A79C39B606FB}</Project>
+      <Name>HtmlExtract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoukeyCommon\SoukeyCommon.csproj">
+      <Project>{DB860F95-6743-483D-9F2B-B463D8AFC96F}</Project>
+      <Name>SoukeyCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoukeyPlugins\SoukeyPlugins.csproj">
+      <Project>{0A52DAE3-DA39-45CD-A10A-E28A17C22ECE}</Project>
+      <Name>SoukeyPlugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoukeyPublish\SoukeyPublish.csproj">
+      <Project>{19C4B3F4-3697-4C93-8F85-DA4FAC08B03B}</Project>
+      <Name>SoukeyPublish</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoukeyResource\SoukeyResource.csproj">
+      <Project>{85AAB8D2-0240-4906-B198-EE0128900DEF}</Project>
+      <Name>SoukeyResource</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

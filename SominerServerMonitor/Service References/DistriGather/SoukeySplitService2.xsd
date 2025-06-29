@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SoukeySplitService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SoukeySplitService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8000/SoukeySplitService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/NetMiner.Resource" />
+  <xs:complexType name="ArrayOfcTaskData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cTaskData" nillable="true" type="tns:cTaskData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcTaskData" nillable="true" type="tns:ArrayOfcTaskData" />
+  <xs:complexType name="cTaskData">
+    <xs:sequence>
+      <xs:element name="_x003C_ErrCount_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_GatherUrlCount_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_TaskID_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_TaskName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/NetMiner.Resource" name="_x003C_TaskState_x003E_k__BackingField" type="q1:cGlobalParas.TaskState" />
+      <xs:element name="_x003C_UrlCount_x003E_k__BackingField" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cTaskData" nillable="true" type="tns:cTaskData" />
+</xs:schema>

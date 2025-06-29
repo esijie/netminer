@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Task1" xml:space="preserve">
+    <value>欢迎使用网络矿工采集任务配置向导，此向导会辅助您完成采集任务的配置过程。
+第一步：采集任务基础信息配置：
+此环节中需要注意的是：网络矿工在默认情况下会自动保存采集的数据，只有用户选择了“直接入库”方直接保存数据到数据库。在此系统显示了临时数据保存的地址。一般用户无需关注此内容。</value>
+  </data>
+  <data name="Task10" xml:space="preserve">
+    <value>数据发布配置：如果是发布到文件，则直接选择文件名即可。如果是发布到数据库，则需要注意一定要使SQL语句正确，如果您不懂SQL语法，请新建表名进行数据发布，此时SQL语句会自动生成。如果是发布到网站，则需要了解是否需要配置相应的HTTP Header信息。</value>
+  </data>
+  <data name="Task11" xml:space="preserve">
+    <value>第十一步：触发器配置
+触发器是一种自动化的触发执行方式，可通过采集任务自动执行其他内容，包括数据库存储过程，外部应用程序和网络矿工采集任务。
+触发器可提升数据采集的自动化程度。譬如：如果有上百个采集任务需要运行，但又考虑到性能的问题，那么就可以少运行一些任务，然后通过触发器在任务运行结束时自动启动其他的任务，始终让可运行的任务保持一个数量级，以防系统性能用尽，出现死机。</value>
+  </data>
+  <data name="Task12" xml:space="preserve">
+    <value>恭喜你，采集任务至此已经配置完成，痛苦的过程已经结束，为确保采集配置的正确，可测试一下，如果没有问题，就可以享受采集数据的快乐了！</value>
+  </data>
+  <data name="Task2" xml:space="preserve">
+    <value>第二步：采集任务运行配置
+默认情况下无需对此环境进行修改。但如果想获取更加强大的采集能力，则需要修改此环节了。
+此环节中需要了解的是：
+直接入库：则直接进行采集数据存储。可支持大量数据的连续采集；
+外部参数任务：则在任务运行时由用户输入参数进行数据采集，可灵活随时的采集您需要的数据；
+采集延时：控制每次访问的间隔时间；
+静默方式运行：不向界面输出任何信息；
+代理设置：单独针对此任务进行代理设置；
+由于此环节配置的重要信息较多，请详细参见用户手册，通过用户手册指导您的配置操作。</value>
+  </data>
+  <data name="Task3" xml:space="preserve">
+    <value>第三步：HTTP Headers配置
+通常是无需配置HTTP Headers，但针对一些特殊网站或进行Web发布，需修改HTTP Header后方可成功操作，建议由专业人员维护。
+HTTP Headers的配置可完全模拟浏览器对网站的数据提交，在配置之前，建议通过HTTP嗅探器进行HTTP通讯监控，以便获取准确的配置信息。
+建议使用：Fiddler</value>
+  </data>
+  <data name="Task4" xml:space="preserve">
+    <value>第四步：采集网址配置
+采集网址是您需要采集数据的源，采集网址配置可以很简单也可能会很复杂。网络矿工在采集网址配置中提供了大量边界配置手段，简化您的采集网址配置。建议您在配置采集任务之前，先明确采集内容的范围、及入口路径，明确之后，再根据明确的范围分析网址规则，最后再将这种网址规则通过网络矿工进行配置，并完成采集网址的添加操作。</value>
+  </data>
+  <data name="Task5" xml:space="preserve">
+    <value>刚才的环节已经配置了网址信息，但要知道，很多时候网址要进行编码处理，以确保可以正确提交。在此需要将这些信息配置好。矿工还支持Base64编码哦。
+通常网络矿工会自动分析出网页的编码，但这不是绝对的，如果出现乱码，则需要您在此指定一下网页编码了。</value>
+  </data>
+  <data name="Task6" xml:space="preserve">
+    <value>第六步：采集规则配置
+采集规则是采集任务配置的核心，采集数据质量的高斯完全取决于采集规则配置质量的高低，甚至是否可以采集。
+数据采集原理是从网页源码中通过字符串匹配获取您需要的数据，匹配是采用的是正则表达式。所以，了解正则更加有助于您的配置。
+不过如果有问题也可直接向我们获取技术支持哦！</value>
+  </data>
+  <data name="Task7" xml:space="preserve">
+    <value>第七步：数据输出配置
+自动输出所采页面有利于数据合并，通过所采集页面的url可识别数据的来源及对应关系。</value>
+  </data>
+  <data name="Task8" xml:space="preserve">
+    <value>第八步：数据编辑配置
+网络矿工将数据编辑功能整合到了采集任务中，将此过程完全自动化，当然您也可以通过网络矿工数据加工工具对已经采集的数据进行编辑。
+数据编辑支持多种操作方式，也支持多条规则，一定要了解哦！</value>
+  </data>
+  <data name="Task9" xml:space="preserve">
+    <value>在此选择发布的类型，并在下一环节进行具体配置。注意：如果任务执行类型选择了“仅采集数据”，则数据发布配置为无效。如果选择了“直接入库”，则数据发布配置只能配置发布到数据库。只有选择“采集并发布数据”方可进行数据发布的完整选项配置。</value>
+  </data>
+</root>

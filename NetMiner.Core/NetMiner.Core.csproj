@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE972F8B-82EF-4FD8-938C-FC2207CA1EDF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NetMiner.Core</RootNamespace>
+    <AssemblyName>NetMiner.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Geckofx-Core">
+      <HintPath>..\third\Geckofx-Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.4.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\third\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\third\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\third\System.Data.SQLite.DLL</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\cTaskData.cs" />
+    <Compile Include="Entity\cTaskDataList.cs" />
+    <Compile Include="Entity\cTaskSplitData.cs" />
+    <Compile Include="Event\cEventProxy.cs" />
+    <Compile Include="Event\cRadarEvent.cs" />
+    <Compile Include="Log\Entity\eLog.cs" />
+    <Compile Include="Plan\Entity\ePlan.cs" />
+    <Compile Include="Plan\oPlans.cs" />
+    <Compile Include="Plan\Entity\eTaskPlan.cs" />
+    <Compile Include="cXmlIO.cs" />
+    <Compile Include="cXmlSConfig.cs" />
+    <Compile Include="DB\oDBDeal.cs" />
+    <Compile Include="Dict\oDict.cs" />
+    <Compile Include="Event\cGatherEvent.cs" />
+    <Compile Include="Event\cListenEvent.cs" />
+    <Compile Include="Event\cPublishEvent.cs" />
+    <Compile Include="Log\cSystemLog.cs" />
+    <Compile Include="Plugin\cPlugin.cs" />
+    <Compile Include="Plugin\cRunPlugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxy\Entity\eProxy.cs" />
+    <Compile Include="Proxy\cProxyControl.cs" />
+    <Compile Include="Proxy\cProxyEvent.cs" />
+    <Compile Include="Proxy\cVerifyProxy.cs" />
+    <Compile Include="Proxy\oProxy.cs" />
+    <Compile Include="pTask\Entity\ePublishTaskData.cs" />
+    <Compile Include="pTask\oPublishTask.cs" />
+    <Compile Include="gTask\Entity\eMultiPage.cs" />
+    <Compile Include="gTask\cTaskManage.cs" />
+    <Compile Include="gTask\Entity\eTaskRun.cs" />
+    <Compile Include="gTask\oTaskRun.cs" />
+    <Compile Include="gTask\Entity\eTaskCompleted.cs" />
+    <Compile Include="gTask\oTaskComplete.cs" />
+    <Compile Include="gTask\Entity\eThreadProxy.cs" />
+    <Compile Include="gTask\Entity\eTriggerTask.cs" />
+    <Compile Include="gTask\Entity\eTaskIndex.cs" />
+    <Compile Include="gTask\oTask.cs" />
+    <Compile Include="gTask\oTaskIndex.cs" />
+    <Compile Include="gTask\oTaskClass.cs" />
+    <Compile Include="gTask\Entity\eFieldRule.cs" />
+    <Compile Include="gTask\Entity\eFieldRules.cs" />
+    <Compile Include="gTask\Entity\eHeader.cs" />
+    <Compile Include="gTask\Entity\eMultiPageRule.cs" />
+    <Compile Include="gTask\Entity\eMultiPageRules.cs" />
+    <Compile Include="gTask\Entity\eNavigRule.cs" />
+    <Compile Include="gTask\Entity\eNavigRules.cs" />
+    <Compile Include="pTask\Entity\ePublishData.cs" />
+    <Compile Include="gTask\Entity\eWebLink.cs" />
+    <Compile Include="gTask\Entity\eWebpageCutFlag.cs" />
+    <Compile Include="gTask\Entity\eTask.cs" />
+    <Compile Include="gTask\Entity\eTaskClass.cs" />
+    <Compile Include="pTask\Entity\ePublishTask.cs" />
+    <Compile Include="Radar\oRadar.cs" />
+    <Compile Include="Radar\Entity\eRadar.cs" />
+    <Compile Include="Radar\Entity\eRule.cs" />
+    <Compile Include="Radar\Entity\eSource.cs" />
+    <Compile Include="Radar\Entity\eRadarIndex.cs" />
+    <Compile Include="Radar\oRadarIndex.cs" />
+    <Compile Include="Url\cUrlParse.cs" />
+    <Compile Include="Url\UrlPack.cs" />
+    <Compile Include="Web\cLogInfo.cs" />
+    <Compile Include="Web\cMyTask.cs" />
+    <Compile Include="Web\cTaskList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetMiner.Common\NetMiner.Common.csproj">
+      <Project>{db860f95-6743-483d-9f2b-b463d8afc96f}</Project>
+      <Name>NetMiner.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetMiner.Data\NetMiner.Data.csproj">
+      <Project>{da53ea55-4761-4ead-90e0-3fb34f2ee7ee}</Project>
+      <Name>NetMiner.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetMiner.Net\NetMiner.Net.csproj">
+      <Project>{e8dff94b-3cde-44fc-813c-21eb362b7d5e}</Project>
+      <Name>NetMiner.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetMiner.Plugins\NetMiner.Plugins.csproj">
+      <Project>{0a52dae3-da39-45cd-a10a-e28a17c22ece}</Project>
+      <Name>NetMiner.Plugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetMiner.Resource\NetMiner.Resource.csproj">
+      <Project>{85aab8d2-0240-4906-b198-ee0128900def}</Project>
+      <Name>NetMiner.Resource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetMiner\NetMiner.csproj">
+      <Project>{f152ac45-7955-4040-b12c-057807c8d0ce}</Project>
+      <Name>NetMiner</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

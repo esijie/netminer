@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{41750E7E-2F0F-40D5-B604-51A0EB0218E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoukeyControl</RootNamespace>
+    <AssemblyName>SoukeyControl</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResGenToolArchitecture>Managed32Bit</ResGenToolArchitecture>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\bin\Debug\components\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>..\bin\Debug\bin\SoukeyControl.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>..\bin\Release\bin\SoukeyControl.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FiddlerCore4, Version=4.4.0.1, Culture=neutral, PublicKeyToken=67cb91587178ac5a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\third\FiddlerCore4.dll</HintPath>
+    </Reference>
+    <Reference Include="Geckofx-Core, Version=45.0.23.0, Culture=neutral, PublicKeyToken=3209ac31600d1857, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\third\Geckofx-Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Geckofx-Winforms">
+      <HintPath>..\..\third\Geckofx-Winforms.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\bin\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Program Files\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Common\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\bin\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomControl\cCopyDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\cCopyDataGridView.Designer.cs">
+      <DependentUpon>cCopyDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\cMyBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\cMyBrowser.Designer.cs">
+      <DependentUpon>cMyBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\cMyCheckButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\cMyCheckButton.Designer.cs">
+      <DependentUpon>cMyCheckButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\cMyDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\cMyDataGridView.Designer.cs">
+      <DependentUpon>cMyDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\cMyListview.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\cMyListview.Designer.cs">
+      <DependentUpon>cMyListview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\cMyTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\cMyTabControl.Designer.cs">
+      <DependentUpon>cMyTabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\cMyTextLog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\cMyTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\cMyTreeView.Designer.cs">
+      <DependentUpon>cMyTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\DataGridViewAutoFilterColumnHeaderCell.cs" />
+    <Compile Include="CustomControl\DataGridViewAutoFilterTextBoxColumn.cs" />
+    <Compile Include="CustomControl\DataGridViewProgressBarColumn.cs" />
+    <Compile Include="CustomControl\uconMyDataOp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\uconMyDataOp.Designer.cs">
+      <DependentUpon>uconMyDataOp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddPTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPTask.Designer.cs">
+      <DependentUpon>frmAddPTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrowser.designer.cs">
+      <DependentUpon>frmBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFilterCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFilterCondition.designer.cs">
+      <DependentUpon>frmFilterCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLookPResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLookPResult.Designer.cs">
+      <DependentUpon>frmLookPResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetData.Designer.cs">
+      <DependentUpon>frmSetData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetHeader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetHeader.Designer.cs">
+      <DependentUpon>frmSetHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="sniff\frmBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sniff\frmBrowser.Designer.cs">
+      <DependentUpon>frmBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Task\cDSource.cs" />
+    <Compile Include="Task\cTaskComplete.cs" />
+    <Compile Include="WebBrowser\frmAbourMyWebbrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebBrowser\frmAbourMyWebbrowser.Designer.cs">
+      <DependentUpon>frmAbourMyWebbrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebBrowser\frmBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebBrowser\frmBrowser.Designer.cs">
+      <DependentUpon>frmBrowser.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomControl\cMyCheckButton.resx">
+      <DependentUpon>cMyCheckButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\uconMyDataOp.resx">
+      <DependentUpon>uconMyDataOp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPTask.resx">
+      <DependentUpon>frmAddPTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBrowser.resx">
+      <DependentUpon>frmBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFilterCondition.resx">
+      <DependentUpon>frmFilterCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLookPResult.resx">
+      <DependentUpon>frmLookPResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetData.resx">
+      <DependentUpon>frmSetData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetHeader.resx">
+      <DependentUpon>frmSetHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sniff\frmBrowser.resx">
+      <DependentUpon>frmBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebBrowser\frmAbourMyWebbrowser.resx">
+      <DependentUpon>frmAbourMyWebbrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebBrowser\frmBrowser.resx">
+      <DependentUpon>frmBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetMiner.Common\NetMiner.Common.csproj">
+      <Project>{db860f95-6743-483d-9f2b-b463d8afc96f}</Project>
+      <Name>NetMiner.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetMiner.Core\NetMiner.Core.csproj">
+      <Project>{fe972f8b-82ef-4fd8-938c-fc2207ca1edf}</Project>
+      <Name>NetMiner.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetMiner.Gather\NetMiner.Gather.csproj">
+      <Project>{fd7d318d-d801-4915-94cc-846697cc89c1}</Project>
+      <Name>NetMiner.Gather</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetMiner.Publish\NetMiner.Publish.csproj">
+      <Project>{19c4b3f4-3697-4c93-8f85-da4fac08b03b}</Project>
+      <Name>NetMiner.Publish</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetMiner.Resource\NetMiner.Resource.csproj">
+      <Project>{85aab8d2-0240-4906-b198-ee0128900def}</Project>
+      <Name>NetMiner.Resource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetMiner\NetMiner.csproj">
+      <Project>{f152ac45-7955-4040-b12c-057807c8d0ce}</Project>
+      <Name>NetMiner</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\第三方类库\FiddlerCoreAPI\DotNet4\FiddlerCore4.dll" />
+    <Analyzer Include="..\bin\FiddlerCore.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

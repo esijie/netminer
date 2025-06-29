@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.netminer.cn" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.netminer.cn" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.netminer.cn/Imports">
+      <xsd:import schemaLocation="http://localhost:8000/SoukeySplitService?xsd=xsd0" namespace="http://www.netminer.cn" />
+      <xsd:import schemaLocation="http://localhost:8000/SoukeySplitService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8000/SoukeySplitService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SoukeySplitService" />
+      <xsd:import schemaLocation="http://localhost:8000/SoukeySplitService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/NetMiner.Resource" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="iGather_isConnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:isConnect" />
+  </wsdl:message>
+  <wsdl:message name="iGather_isConnect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isConnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="iGather_StartTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartTask" />
+  </wsdl:message>
+  <wsdl:message name="iGather_StartTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="iGather_StopTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopTask" />
+  </wsdl:message>
+  <wsdl:message name="iGather_StopTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="iGather_DelTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelTask" />
+  </wsdl:message>
+  <wsdl:message name="iGather_DelTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="iGather_ResetTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetTask" />
+  </wsdl:message>
+  <wsdl:message name="iGather_ResetTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="iGather_GetTaskState_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskState" />
+  </wsdl:message>
+  <wsdl:message name="iGather_GetTaskState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="iGather_GetTaskList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskList" />
+  </wsdl:message>
+  <wsdl:message name="iGather_GetTaskList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iGather_GetTaskRunList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskRunList" />
+  </wsdl:message>
+  <wsdl:message name="iGather_GetTaskRunList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskRunListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="iGather">
+    <wsdl:operation name="isConnect">
+      <wsdl:input wsaw:Action="http://www.netminer.cn/iGather/isConnect" message="tns:iGather_isConnect_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.netminer.cn/iGather/isConnectResponse" message="tns:iGather_isConnect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartTask">
+      <wsdl:input wsaw:Action="http://www.netminer.cn/iGather/StartTask" message="tns:iGather_StartTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.netminer.cn/iGather/StartTaskResponse" message="tns:iGather_StartTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopTask">
+      <wsdl:input wsaw:Action="http://www.netminer.cn/iGather/StopTask" message="tns:iGather_StopTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.netminer.cn/iGather/StopTaskResponse" message="tns:iGather_StopTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelTask">
+      <wsdl:input wsaw:Action="http://www.netminer.cn/iGather/DelTask" message="tns:iGather_DelTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.netminer.cn/iGather/DelTaskResponse" message="tns:iGather_DelTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetTask">
+      <wsdl:input wsaw:Action="http://www.netminer.cn/iGather/ResetTask" message="tns:iGather_ResetTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.netminer.cn/iGather/ResetTaskResponse" message="tns:iGather_ResetTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskState">
+      <wsdl:input wsaw:Action="http://www.netminer.cn/iGather/GetTaskState" message="tns:iGather_GetTaskState_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.netminer.cn/iGather/GetTaskStateResponse" message="tns:iGather_GetTaskState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskList">
+      <wsdl:input wsaw:Action="http://www.netminer.cn/iGather/GetTaskList" message="tns:iGather_GetTaskList_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.netminer.cn/iGather/GetTaskListResponse" message="tns:iGather_GetTaskList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskRunList">
+      <wsdl:input wsaw:Action="http://www.netminer.cn/iGather/GetTaskRunList" message="tns:iGather_GetTaskRunList_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.netminer.cn/iGather/GetTaskRunListResponse" message="tns:iGather_GetTaskRunList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

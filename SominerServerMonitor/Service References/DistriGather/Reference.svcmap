@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4398fc07-10f9-4982-b33e-5730f2bc8297" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/SoukeySplitService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SoukeySplitService.xsd" MetadataType="Schema" ID="5d3b9e63-fe1b-4332-b5f6-d4a5d192be77" SourceId="1" SourceUrl="http://localhost:8000/SoukeySplitService?xsd=xsd0" />
+    <MetadataFile FileName="cDistriGatherEngine.wsdl" MetadataType="Wsdl" ID="217b71dc-c067-4aca-b334-afee0e89f70b" SourceId="1" SourceUrl="http://localhost:8000/SoukeySplitService?wsdl" />
+    <MetadataFile FileName="SoukeySplitService.wsdl" MetadataType="Wsdl" ID="d868c053-eebb-493f-a0f7-246c06dfd061" SourceId="1" SourceUrl="http://localhost:8000/SoukeySplitService?wsdl=wsdl0" />
+    <MetadataFile FileName="SoukeySplitService.disco" MetadataType="Disco" ID="db0a2745-f3ad-444e-b110-45ebcc780f09" SourceId="1" SourceUrl="http://localhost:8000/SoukeySplitService?disco" />
+    <MetadataFile FileName="SoukeySplitService1.xsd" MetadataType="Schema" ID="1d5ab186-b515-4954-94bc-e9cd52e81933" SourceId="1" SourceUrl="http://localhost:8000/SoukeySplitService?xsd=xsd3" />
+    <MetadataFile FileName="SoukeySplitService2.xsd" MetadataType="Schema" ID="c061ba15-091c-4a72-bb6f-eba7e0839731" SourceId="1" SourceUrl="http://localhost:8000/SoukeySplitService?xsd=xsd2" />
+    <MetadataFile FileName="SoukeySplitService3.xsd" MetadataType="Schema" ID="551002b3-8548-42d9-8cba-b9365f1ca942" SourceId="1" SourceUrl="http://localhost:8000/SoukeySplitService?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

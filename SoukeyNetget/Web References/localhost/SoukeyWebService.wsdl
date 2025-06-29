@@ -1,0 +1,1671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ConnectServer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConnectServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConnectServerResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActiveClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActiveClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActiveClientResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTaskNameResult" type="tns:cRemoteTaskEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="cRemoteTaskEntity">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaskFileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaskName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GatherTaskType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="isSubRun" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTaskFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTaskFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSplitTaskState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tsID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tState" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TaskID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSplitTaskStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSplitTaskStateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTaskState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tState" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TaskID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTaskStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateTaskStateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PushTaskResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fs" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="TaskName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartIndex" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PushTaskResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PushTaskResultResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DealUploadZIP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TaskName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TaskID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="gType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DealUploadZIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DealUploadZIPResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlanResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTaskPlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="planXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTaskPlanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateTaskPlanResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRunning">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRunningResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRunningResult" type="tns:ArrayOfCTaskList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCTaskList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="cTaskList" nillable="true" type="tns:cTaskList" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="cTaskList">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TaskID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaskName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="State" type="tns:TaskState" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="gCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DoUID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SavePath" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TaskState">
+        <s:restriction base="s:string">
+          <s:enumeration value="UnStart" />
+          <s:enumeration value="Started" />
+          <s:enumeration value="Aborted" />
+          <s:enumeration value="Waiting" />
+          <s:enumeration value="Running" />
+          <s:enumeration value="Pause" />
+          <s:enumeration value="Stopped" />
+          <s:enumeration value="Exporting" />
+          <s:enumeration value="Completed" />
+          <s:enumeration value="Failed" />
+          <s:enumeration value="Publishing" />
+          <s:enumeration value="PublishStop" />
+          <s:enumeration value="PublishFailed" />
+          <s:enumeration value="Request" />
+          <s:enumeration value="WaitingPublish" />
+          <s:enumeration value="RemoteUnstart" />
+          <s:enumeration value="RemoteRunning" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetTasks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTasksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTasksResult" type="tns:ArrayOfCMyTask" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCMyTask">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="cMyTask" nillable="true" type="tns:cMyTask" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="cMyTask">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaskName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SavePath" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="tState" type="tns:TaskState" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SplitTask" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSplitTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSplitTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSplitTaskResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ResetTaskResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreUploadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreUploadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PreUploadFileResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fs" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="taskClassID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="isCover" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadFileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Register">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegisterResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerState">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServerStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetServerStateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartGather">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartGatherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StartGatherResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StopGather">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TaskID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StopGatherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StopGatherResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelMyTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelMyTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelMyTaskResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TaskID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelTaskResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLogResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLogByTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="taskID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLogByTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLogByTaskResult" type="tns:ArrayOfCLogInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCLogInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="cLogInfo" nillable="true" type="tns:cLogInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="cLogInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaskID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaskName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="lType" type="tns:LogType" />
+          <s:element minOccurs="0" maxOccurs="1" name="strLog" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LogDate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="LogType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Info" />
+          <s:enumeration value="Error" />
+          <s:enumeration value="Warning" />
+          <s:enumeration value="RunPlanTask" />
+          <s:enumeration value="GatherError" />
+          <s:enumeration value="PublishError" />
+          <s:enumeration value="Start" />
+          <s:enumeration value="Stop" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="LoadData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TaskName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="topCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadDataResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TaskName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelLogResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelRunningTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TaskID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelRunningTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelRunningTaskResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TaskName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadTaskResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fs" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveTaskResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadDict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dictClass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fs" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadDictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadDictResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckSubTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TaskName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckSubTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckSubTaskResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTaskClassResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllTaskClass">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllTaskClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllTaskClassResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTaskClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClassName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTaskClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddTaskClassResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelTaskClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelTaskClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DelTaskClassResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConnectServerSoapIn">
+    <wsdl:part name="parameters" element="tns:ConnectServer" />
+  </wsdl:message>
+  <wsdl:message name="ConnectServerSoapOut">
+    <wsdl:part name="parameters" element="tns:ConnectServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActiveClientSoapIn">
+    <wsdl:part name="parameters" element="tns:ActiveClient" />
+  </wsdl:message>
+  <wsdl:message name="ActiveClientSoapOut">
+    <wsdl:part name="parameters" element="tns:ActiveClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaskName" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaskNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaskFile" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaskFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSplitTaskStateSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSplitTaskState" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSplitTaskStateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSplitTaskStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskStateSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTaskState" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskStateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTaskStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="PushTaskResultSoapIn">
+    <wsdl:part name="parameters" element="tns:PushTaskResult" />
+  </wsdl:message>
+  <wsdl:message name="PushTaskResultSoapOut">
+    <wsdl:part name="parameters" element="tns:PushTaskResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="DealUploadZIPSoapIn">
+    <wsdl:part name="parameters" element="tns:DealUploadZIP" />
+  </wsdl:message>
+  <wsdl:message name="DealUploadZIPSoapOut">
+    <wsdl:part name="parameters" element="tns:DealUploadZIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlan" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskPlanSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTaskPlan" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskPlanSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTaskPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRunningSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRunning" />
+  </wsdl:message>
+  <wsdl:message name="GetRunningSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRunningResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTasksSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTasks" />
+  </wsdl:message>
+  <wsdl:message name="GetTasksSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSplitTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSplitTask" />
+  </wsdl:message>
+  <wsdl:message name="GetSplitTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSplitTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetTask" />
+  </wsdl:message>
+  <wsdl:message name="ResetTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="PreUploadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:PreUploadFile" />
+  </wsdl:message>
+  <wsdl:message name="PreUploadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:PreUploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSoapIn">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerStateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerState" />
+  </wsdl:message>
+  <wsdl:message name="GetServerStateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartGatherSoapIn">
+    <wsdl:part name="parameters" element="tns:StartGather" />
+  </wsdl:message>
+  <wsdl:message name="StartGatherSoapOut">
+    <wsdl:part name="parameters" element="tns:StartGatherResponse" />
+  </wsdl:message>
+  <wsdl:message name="StopGatherSoapIn">
+    <wsdl:part name="parameters" element="tns:StopGather" />
+  </wsdl:message>
+  <wsdl:message name="StopGatherSoapOut">
+    <wsdl:part name="parameters" element="tns:StopGatherResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelMyTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:DelMyTask" />
+  </wsdl:message>
+  <wsdl:message name="DelMyTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:DelMyTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:DelTask" />
+  </wsdl:message>
+  <wsdl:message name="DelTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:DelTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLogSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLog" />
+  </wsdl:message>
+  <wsdl:message name="GetLogSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLogByTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLogByTask" />
+  </wsdl:message>
+  <wsdl:message name="GetLogByTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLogByTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadData" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelLogSoapIn">
+    <wsdl:part name="parameters" element="tns:DelLog" />
+  </wsdl:message>
+  <wsdl:message name="DelLogSoapOut">
+    <wsdl:part name="parameters" element="tns:DelLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelRunningTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:DelRunningTask" />
+  </wsdl:message>
+  <wsdl:message name="DelRunningTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:DelRunningTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadTask" />
+  </wsdl:message>
+  <wsdl:message name="DownloadTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveTask" />
+  </wsdl:message>
+  <wsdl:message name="SaveTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadDictSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadDict" />
+  </wsdl:message>
+  <wsdl:message name="UploadDictSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckSubTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckSubTask" />
+  </wsdl:message>
+  <wsdl:message name="CheckSubTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckSubTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskClassSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaskClass" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskClassSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaskClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTaskClassSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllTaskClass" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTaskClassSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllTaskClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTaskClassSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTaskClass" />
+  </wsdl:message>
+  <wsdl:message name="AddTaskClassSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTaskClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelTaskClassSoapIn">
+    <wsdl:part name="parameters" element="tns:DelTaskClass" />
+  </wsdl:message>
+  <wsdl:message name="DelTaskClassSoapOut">
+    <wsdl:part name="parameters" element="tns:DelTaskClassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SoukeyWebServiceSoap">
+    <wsdl:operation name="ConnectServer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">链接远程服务器</wsdl:documentation>
+      <wsdl:input message="tns:ConnectServerSoapIn" />
+      <wsdl:output message="tns:ConnectServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActiveClient">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">由客户端定期激活远程服务器记录的客户信息状态</wsdl:documentation>
+      <wsdl:input message="tns:ActiveClientSoapIn" />
+      <wsdl:output message="tns:ActiveClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">客户端请求下载需要运行的采集任务，返回一个名称</wsdl:documentation>
+      <wsdl:input message="tns:GetTaskNameSoapIn" />
+      <wsdl:output message="tns:GetTaskNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据指定的文件下载采集任务</wsdl:documentation>
+      <wsdl:input message="tns:GetTaskFileSoapIn" />
+      <wsdl:output message="tns:GetTaskFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSplitTaskState">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改分解任务的状态</wsdl:documentation>
+      <wsdl:input message="tns:UpdateSplitTaskStateSoapIn" />
+      <wsdl:output message="tns:UpdateSplitTaskStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskState">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改任务的状态</wsdl:documentation>
+      <wsdl:input message="tns:UpdateTaskStateSoapIn" />
+      <wsdl:output message="tns:UpdateTaskStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PushTaskResult">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">由客户端向服务器端上传已经采集的数据结果</wsdl:documentation>
+      <wsdl:input message="tns:PushTaskResultSoapIn" />
+      <wsdl:output message="tns:PushTaskResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DealUploadZIP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">采集结果上传结束后，调用此方法进行数据的第一步处理。后续步骤由采集引擎完成</wsdl:documentation>
+      <wsdl:input message="tns:DealUploadZIPSoapIn" />
+      <wsdl:output message="tns:DealUploadZIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取计划任务信息，只有系统管理员方可获取计划信息</wsdl:documentation>
+      <wsdl:input message="tns:GetPlanSoapIn" />
+      <wsdl:output message="tns:GetPlanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskPlan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改采集任务的执行间隔，只有系统管理员方可获取计划信息</wsdl:documentation>
+      <wsdl:input message="tns:UpdateTaskPlanSoapIn" />
+      <wsdl:output message="tns:UpdateTaskPlanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRunning">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取正在运行的采集任务</wsdl:documentation>
+      <wsdl:input message="tns:GetRunningSoapIn" />
+      <wsdl:output message="tns:GetRunningSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTasks">
+      <wsdl:input message="tns:GetTasksSoapIn" />
+      <wsdl:output message="tns:GetTasksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSplitTask">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取指定采集任务的分解任务</wsdl:documentation>
+      <wsdl:input message="tns:GetSplitTaskSoapIn" />
+      <wsdl:output message="tns:GetSplitTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetTask">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">重置采集任务</wsdl:documentation>
+      <wsdl:input message="tns:ResetTaskSoapIn" />
+      <wsdl:output message="tns:ResetTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PreUploadFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">预处理，先判断上传的任务是否存在，如果存在判断当前的任务的状态并返回</wsdl:documentation>
+      <wsdl:input message="tns:PreUploadFileSoapIn" />
+      <wsdl:output message="tns:PreUploadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">由客户端调用上传采集任务</wsdl:documentation>
+      <wsdl:input message="tns:UploadFileSoapIn" />
+      <wsdl:output message="tns:UploadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">调用此方法判断采集引擎是否已经注册</wsdl:documentation>
+      <wsdl:input message="tns:RegisterSoapIn" />
+      <wsdl:output message="tns:RegisterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerState">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取采集引擎当前的运行状态</wsdl:documentation>
+      <wsdl:input message="tns:GetServerStateSoapIn" />
+      <wsdl:output message="tns:GetServerStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartGather">
+      <wsdl:input message="tns:StartGatherSoapIn" />
+      <wsdl:output message="tns:StartGatherSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StopGather">
+      <wsdl:input message="tns:StopGatherSoapIn" />
+      <wsdl:output message="tns:StopGatherSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelMyTask">
+      <wsdl:input message="tns:DelMyTaskSoapIn" />
+      <wsdl:output message="tns:DelMyTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelTask">
+      <wsdl:input message="tns:DelTaskSoapIn" />
+      <wsdl:output message="tns:DelTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取采集任务运行的记录，只能获取属于自己任务的运行记录，如果为系统管理员，则获取所有</wsdl:documentation>
+      <wsdl:input message="tns:GetLogSoapIn" />
+      <wsdl:output message="tns:GetLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogByTask">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取指定采集任务的运行日志</wsdl:documentation>
+      <wsdl:input message="tns:GetLogByTaskSoapIn" />
+      <wsdl:output message="tns:GetLogByTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">指定返回采集任务的采集数据</wsdl:documentation>
+      <wsdl:input message="tns:LoadDataSoapIn" />
+      <wsdl:output message="tns:LoadDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelLog">
+      <wsdl:input message="tns:DelLogSoapIn" />
+      <wsdl:output message="tns:DelLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRunningTask">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除已停止的运行任务</wsdl:documentation>
+      <wsdl:input message="tns:DelRunningTaskSoapIn" />
+      <wsdl:output message="tns:DelRunningTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTask">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">下载指定的采集任务</wsdl:documentation>
+      <wsdl:input message="tns:DownloadTaskSoapIn" />
+      <wsdl:output message="tns:DownloadTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTask">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">保存采集任务信息</wsdl:documentation>
+      <wsdl:input message="tns:SaveTaskSoapIn" />
+      <wsdl:output message="tns:SaveTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传字典数据</wsdl:documentation>
+      <wsdl:input message="tns:UploadDictSoapIn" />
+      <wsdl:output message="tns:UploadDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSubTask">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">判断此任务在采集引擎中是否还是由当前的客户所，如果是，则返回true，则客户端继续运行，如果不是，则返回false，客户端则删除</wsdl:documentation>
+      <wsdl:input message="tns:CheckSubTaskSoapIn" />
+      <wsdl:output message="tns:CheckSubTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskClass">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取采集任务分类，并用于管理，与权限有关</wsdl:documentation>
+      <wsdl:input message="tns:GetTaskClassSoapIn" />
+      <wsdl:output message="tns:GetTaskClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTaskClass">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取采集任务分类</wsdl:documentation>
+      <wsdl:input message="tns:GetAllTaskClassSoapIn" />
+      <wsdl:output message="tns:GetAllTaskClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTaskClass">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新增采集任务分类</wsdl:documentation>
+      <wsdl:input message="tns:AddTaskClassSoapIn" />
+      <wsdl:output message="tns:AddTaskClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelTaskClass">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除采集任务分类</wsdl:documentation>
+      <wsdl:input message="tns:DelTaskClassSoapIn" />
+      <wsdl:output message="tns:DelTaskClassSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SoukeyWebServiceSoap" type="tns:SoukeyWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConnectServer">
+      <soap:operation soapAction="http://tempuri.org/ConnectServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActiveClient">
+      <soap:operation soapAction="http://tempuri.org/ActiveClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskName">
+      <soap:operation soapAction="http://tempuri.org/GetTaskName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskFile">
+      <soap:operation soapAction="http://tempuri.org/GetTaskFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSplitTaskState">
+      <soap:operation soapAction="http://tempuri.org/UpdateSplitTaskState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskState">
+      <soap:operation soapAction="http://tempuri.org/UpdateTaskState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PushTaskResult">
+      <soap:operation soapAction="http://tempuri.org/PushTaskResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DealUploadZIP">
+      <soap:operation soapAction="http://tempuri.org/DealUploadZIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlan">
+      <soap:operation soapAction="http://tempuri.org/GetPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskPlan">
+      <soap:operation soapAction="http://tempuri.org/UpdateTaskPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRunning">
+      <soap:operation soapAction="http://tempuri.org/GetRunning" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasks">
+      <soap:operation soapAction="http://tempuri.org/GetTasks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSplitTask">
+      <soap:operation soapAction="http://tempuri.org/GetSplitTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetTask">
+      <soap:operation soapAction="http://tempuri.org/ResetTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreUploadFile">
+      <soap:operation soapAction="http://tempuri.org/PreUploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://tempuri.org/UploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap:operation soapAction="http://tempuri.org/Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerState">
+      <soap:operation soapAction="http://tempuri.org/GetServerState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartGather">
+      <soap:operation soapAction="http://tempuri.org/StartGather" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopGather">
+      <soap:operation soapAction="http://tempuri.org/StopGather" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelMyTask">
+      <soap:operation soapAction="http://tempuri.org/DelMyTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelTask">
+      <soap:operation soapAction="http://tempuri.org/DelTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLog">
+      <soap:operation soapAction="http://tempuri.org/GetLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogByTask">
+      <soap:operation soapAction="http://tempuri.org/GetLogByTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadData">
+      <soap:operation soapAction="http://tempuri.org/LoadData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelLog">
+      <soap:operation soapAction="http://tempuri.org/DelLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRunningTask">
+      <soap:operation soapAction="http://tempuri.org/DelRunningTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTask">
+      <soap:operation soapAction="http://tempuri.org/DownloadTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTask">
+      <soap:operation soapAction="http://tempuri.org/SaveTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDict">
+      <soap:operation soapAction="http://tempuri.org/UploadDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSubTask">
+      <soap:operation soapAction="http://tempuri.org/CheckSubTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskClass">
+      <soap:operation soapAction="http://tempuri.org/GetTaskClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTaskClass">
+      <soap:operation soapAction="http://tempuri.org/GetAllTaskClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTaskClass">
+      <soap:operation soapAction="http://tempuri.org/AddTaskClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelTaskClass">
+      <soap:operation soapAction="http://tempuri.org/DelTaskClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SoukeyWebServiceSoap12" type="tns:SoukeyWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConnectServer">
+      <soap12:operation soapAction="http://tempuri.org/ConnectServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActiveClient">
+      <soap12:operation soapAction="http://tempuri.org/ActiveClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskName">
+      <soap12:operation soapAction="http://tempuri.org/GetTaskName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskFile">
+      <soap12:operation soapAction="http://tempuri.org/GetTaskFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSplitTaskState">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSplitTaskState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskState">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTaskState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PushTaskResult">
+      <soap12:operation soapAction="http://tempuri.org/PushTaskResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DealUploadZIP">
+      <soap12:operation soapAction="http://tempuri.org/DealUploadZIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlan">
+      <soap12:operation soapAction="http://tempuri.org/GetPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskPlan">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTaskPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRunning">
+      <soap12:operation soapAction="http://tempuri.org/GetRunning" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasks">
+      <soap12:operation soapAction="http://tempuri.org/GetTasks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSplitTask">
+      <soap12:operation soapAction="http://tempuri.org/GetSplitTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetTask">
+      <soap12:operation soapAction="http://tempuri.org/ResetTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreUploadFile">
+      <soap12:operation soapAction="http://tempuri.org/PreUploadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap12:operation soapAction="http://tempuri.org/UploadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap12:operation soapAction="http://tempuri.org/Register" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerState">
+      <soap12:operation soapAction="http://tempuri.org/GetServerState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartGather">
+      <soap12:operation soapAction="http://tempuri.org/StartGather" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopGather">
+      <soap12:operation soapAction="http://tempuri.org/StopGather" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelMyTask">
+      <soap12:operation soapAction="http://tempuri.org/DelMyTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelTask">
+      <soap12:operation soapAction="http://tempuri.org/DelTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLog">
+      <soap12:operation soapAction="http://tempuri.org/GetLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogByTask">
+      <soap12:operation soapAction="http://tempuri.org/GetLogByTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadData">
+      <soap12:operation soapAction="http://tempuri.org/LoadData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelLog">
+      <soap12:operation soapAction="http://tempuri.org/DelLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRunningTask">
+      <soap12:operation soapAction="http://tempuri.org/DelRunningTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTask">
+      <soap12:operation soapAction="http://tempuri.org/DownloadTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTask">
+      <soap12:operation soapAction="http://tempuri.org/SaveTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDict">
+      <soap12:operation soapAction="http://tempuri.org/UploadDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSubTask">
+      <soap12:operation soapAction="http://tempuri.org/CheckSubTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskClass">
+      <soap12:operation soapAction="http://tempuri.org/GetTaskClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTaskClass">
+      <soap12:operation soapAction="http://tempuri.org/GetAllTaskClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTaskClass">
+      <soap12:operation soapAction="http://tempuri.org/AddTaskClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelTaskClass">
+      <soap12:operation soapAction="http://tempuri.org/DelTaskClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NetMiner.WebService">
+    <wsdl:port name="SoukeyWebServiceSoap" binding="tns:SoukeyWebServiceSoap">
+      <soap:address location="http://localhost:19923/NetMiner.WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SoukeyWebServiceSoap12" binding="tns:SoukeyWebServiceSoap12">
+      <soap12:address location="http://localhost:19923/NetMiner.WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
